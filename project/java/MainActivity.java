@@ -304,6 +304,16 @@ public class MainActivity extends Activity {
 			}
 		};
 		_screenKeyboard = new EditText(this);
+
+		// This setPadding call is a kludge, but it is messed up
+                // without the call anyhow.  It sets the left and bottom
+                // padding for the EditText in pixels - with the pixel
+                // setting being that for a Samsung Galaxy Tab 10.1.  The
+                // numbers should be different for other devices.  Instead of
+                // magic numbers, the screen placement of the EditText needs
+                // to be set in a more consistent manner across devices of
+                // different sizes and densities.
+		_screenKeyboard.setPadding(445,0,0,390);
 		_videoLayout.addView(_screenKeyboard);
 		_screenKeyboard.setOnKeyListener(new myKeyListener(this, sendBackspace));
 		_screenKeyboard.setHint(R.string.text_edit_click_here);

@@ -68,6 +68,7 @@
 #include <unistd.h>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_screenkeyboard.h>
 
 #ifndef NOSOUND
 #include <SDL_mixer.h>
@@ -1900,6 +1901,10 @@ int game(void)
   
   if (quit == 0)
     {
+
+      if (has_highscore == 0)
+        SDL_ANDROID_ToggleScreenKeyboardTextInput(NULL);
+
       /* Darken screen: */
       
       drawfuzz(0, 0, 640, 480);
