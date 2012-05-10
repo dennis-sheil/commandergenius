@@ -678,9 +678,13 @@ int main(int argc, char * argv[])
       fclose(fi);
     }
   
+ 
+  /* Hide SDL keyboard button in top left of screen */ 
+  SDL_Rect r = { 0, 0, 0, 0 };
+  SDL_ANDROID_SetScreenKeyboardButtonPos
+  (SDL_ANDROID_SCREENKEYBOARD_BUTTON_TEXT, &r);
   
   /* Setup: */
-  
   setup();
   getinitials();
   
