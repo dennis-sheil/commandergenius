@@ -1,0 +1,199 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This is the debhelper compatability version to use.
+#export DH_COMPAT=1
+#export DH_COMPAT=3
+# this is not in debian/compat?
+
+package         := circuslinux
+PWD             := $(shell pwd)
+CFLAGS          := -O2 -Wall
+INSTALL = install
+INSTALL_DATA    := $(INSTALL) -m644
+INSTALL_DIR     := $(INSTALL) -p -d -o root -g root  -m  755
+INSTALL_FILE    := $(INSTALL) -p    -o root -g root  -m  644
+INSTALL_PROGRAM := $(INSTALL) -m755
+INSTALL_SCRIPT  := $(INSTALL) -p    -o root -g root  -m  755
+
+# Some vars needed for clean building the package
+
+DEBIAN_ROOT := $(CURDIR)/debian/$(package)
+
+export DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+# FOR AUTOCONF 2.52 AND NEWER ONLY
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+  confflags += --build $(DEB_HOST_GNU_TYPE)
+else
+  confflags += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
+clean:	configure autotools
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) clean
+	-rm -f config.log config.status config.cache stamp-config
+#	-rm configure
+#	-rm Makefile.in 
+	-rm -f Makefile data/Makefile
+#	-rm data/Makefile.in
+#	-rm aclocal.m4
+	-rm circuslinux
+	-rm circuslinux.o
+
+	-rmdir .clean
+	dh_clean
+
+# THIS MUST NOT BE A .PHONY TARGET!
+configure:
+	./autogen.sh
+
+# The autotools target adds forced build-time dependencies on
+# autotools-dev (for /usr/share/misc/config.*) and devscripts (for dch)
+# It's also a .PHONY make target.
+autotools:
+	OLDDATESUB=`./config.sub -t | tr -d -` ;\
+	OLDDATEGUESS=`./config.guess -t | tr -d -` ;\
+	NEWDATESUB=`/usr/share/misc/config.sub -t | tr -d -` ;\
+	NEWDATEGUESS=`/usr/share/misc/config.guess -t | tr -d -` ;\
+	if [ $$OLDDATESUB -lt $$NEWDATESUB -o \
+	     $$OLDDATEGUESS -lt $$NEWDATEGUESS ]; then \
+	   dch -a -p "GNU config automated update: config.sub\
+	     ($$OLDDATESUB to $$NEWDATESUB), config.guess\
+	     ($$OLDDATEGUESS to $$NEWDATEGUESS)" ;\
+	   cp -f /usr/share/misc/config.sub config.sub ;\
+	   cp -f /usr/share/misc/config.guess config.guess ;\
+	   echo WARNING: GNU config scripts updated from master copies 1>&2 ;\
+	fi
+
+configure-stamp:
+	dh_testdir
+#	aclocal && automake && autoconf
+#	aclocal && autoheader && automake && autoconf
+	touch aclocal.m4	# aclocal
+#	touch config.h.in	# autoheader
+	touch Makefile.in	# automake
+	touch data/Makefile.in
+	touch configure		# autoconf
+	./configure	--prefix=/usr \
+			--mandir=\$${prefix}/share/man \
+			--infodir=\$${prefix}/share/info \
+			--datadir=\$${prefix}/share/games \
+			--enable-scorefile
+
+	touch configure-stamp
+
+build: configure-stamp build-stamp
+build-stamp:
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+#	$(MAKE) USE_SHARED_SCOREFILE=yes
+#	$(MAKE) DATA_PREFIX=$(DESTDIR)/usr/share/games/circuslinux/data/ \
+#              JOY=NO
+
+# Icon is provided upstream
+# convert the icon...
+#	mogrify -format xpm -geometry 32x32 \
+#          -map /usr/X11R6/include/X11/pixmaps/cmap.xpm data/images/icon.bmp  
+# and move it to the debian directory, its needed for the menu system
+#	mv data/images/icon.xpm debian/circuslinux-icon.xpm
+
+	touch build-stamp
+
+install: DH_OPTIONS=
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Add here commands to install the package into debian/circuslinux.
+#	$(MAKE) install prefix=$(DEBIAN_ROOT)/usr \
+#			bindir=$(DEBIAN_ROOT)/usr/games \
+#			datadir=$(DEBIAN_ROOT)/usr/share/games
+	$(INSTALL_FILE) data/images/$(package)-icon.xpm \
+			$(DEBIAN_ROOT)/usr/share/pixmaps/
+	cp -R data/* $(DEBIAN_ROOT)/usr/share/games/$(package)/data/
+	-rm $(DEBIAN_ROOT)/usr/share/games/$(package)/data/Makefile*
+	chmod -R a+rX,g-w,o-w $(DEBIAN_ROOT)/usr/share/games/$(package)/data/
+	cp $(package) $(DEBIAN_ROOT)/usr/games/
+	chmod a+rx,g-w,o-w $(DEBIAN_ROOT)/usr/games/$(package) 
+	$(INSTALL_FILE) debian/circuslinux.desktop $(DEBIAN_ROOT)/usr/share/applications
+#	$(INSTALL_FILE) debian/merge_scorefiles.pl \
+#                      $(DEBIAN_ROOT)/usr/share/doc/circuslinux/
+	dh_movefiles --sourcedir=debian/$(package)
+	rm -rf $(CURDIR)/debian/$(package)/usr/share/games
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir -i
+	dh_testroot -i
+# do not use debconf anymore
+#	dh_installdebconf -i
+	dh_installdocs -i
+	dh_installexamples -i
+	dh_installmenu -i
+#	dh_installmanpages -i
+	dh_installinfo -i
+	dh_installchangelogs CHANGES.txt -i
+# dh_desktop is deprecated
+#	dh_desktop -i
+	dh_link -i
+	dh_strip -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir -a
+	dh_testroot -a
+# do not use debconf anymore
+#	dh_installdebconf -a
+	dh_installdocs -a
+	dh_installexamples -a
+	dh_installmenu -a
+#	dh_installmanpages -a
+	dh_installman debian/circuslinux.6
+	dh_installinfo -a
+	dh_installchangelogs CHANGES.txt -a
+	dh_link -a
+	dh_strip -a
+	dh_compress -a
+	dh_fixperms -a
+#	# You may want to make some executables suid here.
+#	dh_suidregister
+	-chown root.games debian/circuslinux/usr/games/circuslinux
+	-chmod g+s debian/circuslinux/usr/games/circuslinux
+	-chown root.games debian/circuslinux/var/games/circuslinux
+	-chmod 775 debian/circuslinux/var/games/circuslinux
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+
+utf8:
+	iconv -f ISO-8859-1 -t UTF-8 debian/changelog > debian/changelog.utf8
+	mv debian/changelog debian/changelog.iso8859
+	mv debian/changelog.utf8 debian/changelog	
+
+.PHONY: build clean binary-indep binary-arch binary install utf8

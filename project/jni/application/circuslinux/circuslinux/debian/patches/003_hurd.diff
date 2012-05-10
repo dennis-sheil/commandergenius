@@ -1,0 +1,22 @@
+--- circuslinux-1.0.3.orig/configure
++++ circuslinux-1.0.3/configure
+@@ -3140,7 +3140,7 @@
+ 
+ 
+ case "$target_os" in
+-	linux* | k*bsd*-gnu)
++	linux* | k*bsd*-gnu | gnu*)
+ 	TARGET_DEF=LINUX
+ 	;;
+ 
+--- circuslinux-1.0.3.orig/configure.in
++++ circuslinux-1.0.3/configure.in
+@@ -81,7 +81,7 @@
+ 
+ dnl Target
+ case "$target_os" in
+-	linux* | k*bsd*-gnu)
++	linux* | k*bsd*-gnu | gnu*)
+ 	TARGET_DEF=LINUX
+ 	;;	
+ 

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#export DEBCONF_DEBUG=developer
+
+# do not use debconf anymore only to display a message
+# Source debconf library.
+#    . /usr/share/debconf/confmodule
+
+#db_get circuslinux/shared_score_file
+
+#db_get circuslinux/merge_score_files
+#if [ "$RET" = "true" ]; then
+#    if [ ! -e /var/games/circuslinux/scorefile ]; then
+#	bash /usr/share/games/circuslinux/merge_scorefiles.sh
+#    else
+#      db_get circuslinux/score_file_exists
+#    fi
+#fi
+
+if [ ! -d /var/games/circuslinux ]; then
+  mkdir -p /var/games/circuslinux
+fi
+chown root:root /var/games/circuslinux
+chmod 755 /var/games/circuslinux
+touch /var/games/circuslinux/scorefile
+chown root:games /var/games/circuslinux/scorefile
+chmod 775 /var/games/circuslinux/scorefile
+
+#DEBHELPER#

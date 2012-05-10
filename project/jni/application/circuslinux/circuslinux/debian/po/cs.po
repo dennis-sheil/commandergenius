@@ -1,0 +1,103 @@
+#
+# Czech translation of circuslinux templates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux 1.0.3-12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-04-19 21:27+0200\n"
+"PO-Revision-Date: 2005-04-18 21:28+0200\n"
+"Last-Translator: Martin Sin <martin.sin@seznam.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid "Shared scorefile"
+msgstr "Sdílený soubor s výsledky"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr ""
+"Tato verze Circuslinux! pou¾ívá sdílený soubor s výsledky. Nejlep¹í výsledky "
+"nebudou dále ukládány v souboru ~/.circuslinux ale v /var/games/circuslinux/"
+"scorefile. Pro konfiguraci voleb bude pou¾it nový soubor ~/.circuslinuxrc."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr ""
+"K pøipojení starých nejlep¹ích výsledkù v¹ech hráèù do jednoho souboru "
+"mù¾ete jako root spustit:\n"
+"bash /usr/share/doc/circuslinux/merge_scorefiles.sh"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr ""
+"Ka¾dý hráè pak mù¾e, po alespoò jednom spu¹tìní této verze Circuslinux!, "
+"smazat svùj soubor ~/.circuslinux, proto¾e jeho konfiguraèní volby budou "
+"ulo¾eny do ~/.circuslinuxrc. Jestli¾e hráè nesma¾e  ~/.circuslinux, mù¾e "
+"klidnì pou¾ívat verzi circuslinux která byla zkompilována bez sdílení "
+"souborù s výsledky ani¾ by do¹lo ke ztrátì jeho starých výsledkù- a "
+"konfiguraèního souboru. Pokud nebude existovat ~/.circuslinuxrc pak "
+"Circuslinux! se sdíleným souborem výsledkù bude podporovat pouze ètení "
+"starého konfiguraèního souboru pro získání voleb hráèe, ale nikdy do tohoto "
+"souboru nezapí¹e."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr ""
+"Jednodu¹e øeèeno: nemusíte se obávat pou¾ívat Circuslinux! Jestli¾e máte "
+"málo diskového prostoru a poèítáte ka¾dý MB, pak byste mo¾ná mìli øíci svým "
+"u¾ivatelùm, aby smazali starý konfiguraèní soubor."
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Merge score files?"
+msgstr "Slouèit soubory s výsledky?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr "Chcete spustit skript slouèení souborù výsledkù?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "Scorefile exists"
+msgstr "Soubor s výsledky existuje"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "Slouèený soubor s výsledky v /var/games/circuslinux ji¾ existuje!"

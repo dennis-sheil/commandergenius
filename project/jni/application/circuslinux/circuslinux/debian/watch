@@ -1,0 +1,9 @@
+# format version number, currently 2; this line is compulsory!
+version=2
+
+# Site		Directory		Pattern			Version	Script
+#ftp://ftp.sonic.net	/pub/users/nbs/unix/x/circus-linux	circuslinux-(.*)\.tar\.gz	debian	uupdate
+#ftp://ftp.sonic.net/pub/users/nbs/unix/x/circus-linux/circuslinux-([\d\.]+)\.tar\.gz debian uupdate
+#http://nbswebfx.com/downloads/circuslinux-([\d\.]+)\.tar\.gz debian uupdate
+
+ftp://ftp.billsgames.com/unix/x/circus-linux/src/circuslinux-([\d\.]+)\.tar\.gz debian uupdate

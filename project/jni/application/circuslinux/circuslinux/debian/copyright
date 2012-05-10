@@ -1,0 +1,14 @@
+This package was debianized by Christian T. Steigies <cts@debian.org> on
+Thu, 10 Feb 2000 20:15:15 +0100.
+
+It was downloaded from ftp.sonic.net:/pub/users/nbs/unix/x/circus-linux
+See also http://www.newbreedsoftware.com/
+
+Upstream Author and Copyright: William (Bill) Kendrick <bill@newbreedsoftware.com>
+
+Copyright (c) 2000 - 2001 Bill Kendrick
+
+Circus Linux! is distributed under the GNU GENERAL PUBLIC LICENSE.
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public 
+License is found in `/usr/share/common-licenses/GPL'.

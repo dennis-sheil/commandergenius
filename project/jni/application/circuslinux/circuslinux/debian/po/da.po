@@ -1,0 +1,108 @@
+# Danish translation circuslinux.
+# Copyright (C) 2010 circuslinux & nedenstående oversættere.
+# This file is distributed under the same license as the circuslinux package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-12 10:28+0200\n"
+"PO-Revision-Date: 2010-07-20 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org> \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid "Shared scorefile"
+msgstr "Delt pointfil"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr ""
+"Denne version af Circuslinux! bruger en delt pointfil. Fra nu af vil "
+"de bedste resultater ikke længere blive gemt i ~/.circuslinux men i "
+"/var/games/circuslinux/scorefile. Til konfigurationsindstillinger "
+"vil den nye fil ~/.circuslinuxrc blive brugt."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr ""
+"For at sammenføje alle spilleres bedste resultater i en fil kan du "
+"køre:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"som root (administrator)."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr ""
+"Hver spiller kan så, _efter_ at have spillet denne version af Cirucslinux! "
+"mindst en gang, slette sin fil ~/.circuslinux, da dennes konfigurationsindstillinger "
+"vil blive gemt i ~/.circuslinuxrc. Hvis spilleren beslutter ikke at slette "
+" ~/.circuslinux, kan denne stadig bruge en version af circuslinux, som er "
+"kompileret uden delt pointfilunderstøttelse uden at miste sin tidligere "
+"resultatfil og konfigurationsfil. Circuslinux! med delt pointfilunderstøttelse "
+"vil kun læse den gamle konfigurationsfil for at hente spillerens indstillinger "
+"hvis ~/.circuslinuxrc ikke findes, men aldrig skrive til denne fil."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr ""
+"Kort fortalt! Du skal ikke bekymre dig, bare spil løs! Hvis du løber tør for "
+"harddiskplads og hver blok tæller, kan du eventuelt bede dine brugere om "
+"at fjerne den gamle konfigurationsfil."
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:2001
+msgid "Merge score files?"
+msgstr "Sammenføj pointfiler?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:2001
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr ""
+"Ønsker du, at jeg skal køre skriptet merge_scorefile (sammenføj pointfil)?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:3001
+msgid "Scorefile exists"
+msgstr "Pointfil findes"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:3001
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "En sammenføjet pointfil i /var/games/circuslinux findes allerede!"
+

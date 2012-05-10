@@ -1,0 +1,7 @@
+?package(circuslinux):\
+  needs="x11" \
+  section="Games/Action" \
+  longtitle="Circus Linux!" \
+  title="Circus Linux" \
+  command="/usr/games/circuslinux --fullscreen" \
+  icon="/usr/share/pixmaps/circuslinux-icon.xpm" 

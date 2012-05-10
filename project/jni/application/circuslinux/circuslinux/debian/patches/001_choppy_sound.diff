@@ -1,0 +1,34 @@
+Package: circuslinux
+Version: N/A; reported 2003-04-13
+Severity: normal
+Tags: patch
+
+For over a year (perhaps two years), circuslinux has had very choppy
+sound, even on fast machines (Athlon 1.2GHz, PIII-800, etc).  The
+problem seems to be that the call to Mix_OpenAudio uses a chunksize
+(i.e. buffer size) that is too low.  Applying the following patch fixes
+it for me, and causes no noticeable lag in the sound.
+
+[...]
+
+Actually, change that "4096" -- "1024" seems to skip just a little bit on                           
+my PIII-800 box.                                                                                    
+                                                                                                    
+The "4096" is 4096 bytes, which translates into a 23 ms buffer                                      
+(4096/(44100*4) = .0232 s), which is still quite small.  Even with that, I                          
+still couldn't detect any lag in the sound.                                                         
+                                                    
+
+----- BEGIN PATCH -----
+--- circuslinux-1.0.3/circuslinux.c     2001-04-29 00:38:01.000000000 -0600
++++ /home/dwon/build/circuslinux-1.0.3/circuslinux.c    2003-04-13 10:10:14.000000000 -0600
+@@ -2809,7 +2809,7 @@
+ #ifndef NOSOUND
+   if (use_sound == 1)
+     {
+-      if (Mix_OpenAudio(44100, AUDIO_S16, 2, 256) < 0)
++      if (Mix_OpenAudio(44100, AUDIO_S16, 2, 4096) < 0)
+         {
+           fprintf(stderr,
+                   "\nWarning: I could not set up audio for 44100 Hz "
+----- END PATCH -----

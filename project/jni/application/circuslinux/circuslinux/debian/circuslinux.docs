@@ -1,0 +1,7 @@
+AUTHORS.txt
+CHANGES.txt
+FAQ.txt
+README.txt
+README-SDL.txt
+debian/merge_scorefiles.pl
+debian/merge_scorefiles.sh

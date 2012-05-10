@@ -1,0 +1,309 @@
+circuslinux (1.0.3-27) unstable; urgency=low
+
+  * added Danish debconf translation from Joe Dalton (closes: #589772)
+  * updated Standards-Version to 3.9.1 (no changes)
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 26 Jul 2010 23:24:29 +0200
+
+circuslinux (1.0.3-26) unstable; urgency=low
+
+  * updated Standards-Version to 3.8.4 (no changes)
+  * added ${misc:Depends} to debian/control for circuslinux-data
+  * stop build-depending on dbs (closes: #576043)
+  * GNU config automated update: config.sub     (20090611 to 20100122),
+    config.guess     (20090610 to 20091230)
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 10 May 2010 21:05:43 +0000
+
+circuslinux (1.0.3-25) unstable; urgency=low
+
+  * include patch to compile on GNU/Hurd (closes: #557522)
+  * updated Standards-Version to 3.8.3, added Vcs fields to debian/control
+  * added ${misc:Depends} to debian/control entry
+  * GNU config automated update: config.sub     (20080116 to 20090611),
+    config.guess     (20080123 to 20090610)
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 25 Jan 2010 21:24:59 +0000
+
+circuslinux (1.0.3-24) unstable; urgency=low
+
+  * add Russian debconf translation from Yuri Kozlov (closes: 537917)
+  * updated Standards-Version to 3.8.2, added Homepage to debian/control
+
+ -- Christian T. Steigies <cts@debian.org>  Tue, 21 Jul 2009 21:23:10 +0200
+
+circuslinux (1.0.3-23) unstable; urgency=low
+
+  * ignore make clean error, so the clean target does not have to depend 
+    on configure-stamp (closes: #474743)
+
+ -- Christian T. Steigies <cts@debian.org>  Tue, 29 Apr 2008 22:47:03 +0200
+
+circuslinux (1.0.3-22) unstable; urgency=low
+
+  * reformat NEWS files to remove lintian warnings
+  * make desktop file GNOME HIG compliant (closes: #469921)
+  * use chown properly
+  * clean target should depend on configure-stamp, so that a Makefile exists
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 10 Mar 2008 23:56:58 +0100
+
+circuslinux (1.0.3-21) unstable; urgency=medium
+
+  [ Christian T. Steigies ]
+  * purge scorefile on package purge (closes: #454703)
+  * include desktop file (ArcadeGame)
+  * updated Standards-Version to 3.7.3, use section Games/Action according
+    to the menu policy
+  * GNU config automated update: config.sub     (20060702 to 20070628),
+    config.guess     (20060702 to 20070722)
+  * GNU config automated update: config.sub     (20070628 to 20080116),
+    config.guess     (20070722 to 20080123)
+
+ -- Christian T. Steigies <cts@debian.org>  Sat, 01 Mar 2008 23:15:15 +0100
+
+circuslinux (1.0.3-20) unstable; urgency=low
+
+  * add Portuguese debconf translation from Luísa Lourenço (closes: #416786)
+  * updated Standards-Version to 3.7.2 (no changes)
+  * GNU config automated update: config.sub     (20060223 to 20060702),
+    config.guess     (20060223 to 20060702)
+
+ -- Christian T. Steigies <cts@debian.org>  Sun,  1 Jul 2007 21:55:31 +0200
+
+circuslinux (1.0.3-19) unstable; urgency=low
+
+  * updated watch file
+  * updated Standards-Version to 3.7.0 (no changes)
+  * use current debhelper
+  * GNU config automated update: config.sub     (20050708 to 20060223),
+    config.guess     (20050803 to 20060223)
+
+ -- Christian T. Steigies <cts@debian.org>  Wed,  3 May 2006 22:01:22 +0000
+
+circuslinux (1.0.3-18) unstable; urgency=low
+
+  * add Swedish debconf translation from Daniel Nylander (closes: #341033)
+
+ -- Christian T. Steigies <cts@debian.org>  Tue,  3 Jan 2006 23:08:52 +0100
+
+circuslinux (1.0.3-17) unstable; urgency=low
+
+  * add Spanish debconf translation from César Gómez Martín (closes: #334395)
+  * Like all other translations, this is not used anymore, since NEWS.Debian
+    is english only. If anybody has a suggestion for multilanguage NEWS
+    files, without merging all translations into one huge file, please let
+    me know.
+  * convert changelog to UTF-8 to make lintian happy, too bad I can't read
+    the changelog anymore then
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 24 Oct 2005 23:01:41 +0200
+
+circuslinux (1.0.3-16) unstable; urgency=low
+
+  * run ./autogen.sh to actually regenerate configure (closes: #322025)
+
+ -- Christian T. Steigies <cts@debian.org>  Tue,  6 Sep 2005 10:34:39 +0000
+
+circuslinux (1.0.3-15) unstable; urgency=low
+
+  * GNU/kFreeBSD support in configure.in by Robert Millan (closes: #322025)
+  * NEWS.Debian instead of debconf notices is what makes Joey happy (closes: #321358)
+  * don't depend on debconf anymore
+  * GNU config automated update: config.sub (20050422 to 20050708),
+    config.guess (20050422 to 20050803)
+
+ -- Christian T. Steigies <cts@debian.org>  Mon,  5 Sep 2005 21:56:05 +0000
+
+circuslinux (1.0.3-14) unstable; urgency=low
+
+  * depend on debconf | debconf-2.0 to make Joey happy
+  * updated Standards-Version to 3.6.2.0 (no changes)
+
+ -- Christian T. Steigies <cts@debian.org>  Thu,  4 Aug 2005 23:49:31 +0200
+
+circuslinux (1.0.3-13) unstable; urgency=low
+
+  * add Czech debconf template from Martin Sin (closes: #305393)
+  * add Vietnamese debconf template from Clytie Siddall (closes: #313343)
+  * typo fixes in German debconf template from Jens Seidel (closes: #313683)
+  * use debhelper compat 5 (moves menu file to /usr/share/menu)
+  * change build-depends for debhelper to (>= 4.9.1)
+  * GNU config automated update: config.sub (20041130 to 20050422),
+    config.guess (20041112 to 20050422)
+
+ -- Christian T. Steigies <cts@debian.org>  Wed, 15 Jun 2005 21:38:25 +0200
+
+circuslinux (1.0.3-12) unstable; urgency=low
+
+  * fix copyright file
+  * add Catalan debconf template (closes: #290576)
+  * GNU config automated update: config.sub (20040624 to 20041130),
+    config.guess (20040813 to 20041112)
+  * fix lintian warnings about menu:
+    - menu icons now seem to belong in /usr/share/pixmaps
+    - change menu and rules accordingly
+
+ -- Christian T. Steigies <cts@debian.org>  Sat, 15 Jan 2005 15:25:30 +0100
+
+circuslinux (1.0.3-11) unstable; urgency=low
+
+  * add Japanese debconf template (closes: #279955)
+  * use dh_installman instead of dh_installmanpages
+  * add correct section in manpage (6, not SECTION)
+  * GNU config automated update: config.sub (20040105 to 20040624),
+    config.guess (20040105 to 20040813)
+
+ -- Christian T. Steigies <cts@debian.org>  Wed, 10 Nov 2004 00:33:18 +0100
+
+circuslinux (1.0.3-10) unstable; urgency=low
+
+  * add Dutch debconf template translations (closes: #241424)
+  * updated Standards-Version to 3.6.1.0 (no changes)
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 19 Apr 2004 20:58:23 +0200
+
+circuslinux (1.0.3-9) unstable; urgency=low
+
+  * split data files into separate package (closes: #233332)
+  * GNU config automated update: config.sub (20030717 to 20031007),
+    config.guess (20030702 to 20031007)
+  * GNU config automated update: config.sub (20031007 to 20040105),
+    config.guess (20031007 to 20040105)
+
+ -- Christian T. Steigies <cts@debian.org>  Tue, 24 Feb 2004 09:27:54 +0100
+
+circuslinux (1.0.3-8) unstable; urgency=low
+
+  * add Brazilian Portuguese debconf template translations (closes: #206942)
+  * add German templates, am I allowed to do that myself?
+  * add French debconf template translations (closes: #207241)
+
+ -- Christian T. Steigies <cts@debian.org>  Thu, 28 Aug 2003 21:22:02 -0400
+
+circuslinux (1.0.3-7) unstable; urgency=low
+
+  * switch to gettext-based debconf templates, thanks to
+    Christian Perrier for the patch (closes: #205789)
+  * GNU config automated update: config.sub (20020307 to 20030717),
+    config.guess (20020320 to 20030702)
+
+ -- Christian T. Steigies <cts@debian.org>  Sun, 17 Aug 2003 12:17:15 -0400
+
+circuslinux (1.0.3-6) unstable; urgency=medium
+
+  * make sure the scorefile is owned by root, thanks Dwayne Litzenberger
+
+ -- Christian T. Steigies <cts@debian.org>  Fri, 18 Apr 2003 19:39:59 -0400
+
+circuslinux (1.0.3-5) unstable; urgency=low
+
+  * apply (improved) sound patch from Dwayne Litzenberger (closes: #188863)
+  * use debconf to explain how to merge all players scorefiles
+  * added shell script that calls perl script to do the actual merge
+  * enable shared scorefile (closes: #74127)
+  * GNU config automated update: config.sub (20011005 to 20020307),
+    config.guess (20011005 to 20020320)
+
+ -- Christian T. Steigies <cts@debian.org>  Thu, 17 Apr 2003 22:41:39 -0400
+
+circuslinux (1.0.3-4) unstable; urgency=low
+
+  * add enable-scorefile option to configure.in and use it
+
+ -- Christian T. Steigies <cts@debian.org>  Sun, 28 Oct 2001 22:25:50 -0500
+
+circuslinux (1.0.3-3) unstable; urgency=low
+
+  * do not use automake, autoconf for package building (closes: #114130)
+  * complete overhaul, do not delete configure, aclocal.m4 and Makefile.in
+    in clean target, added configure and autotools target, many thanks to hmh
+    for the hints
+  * added autotools-dev, devscripts to Build-Depends, maybe it should 
+    Build-Conflict with the autochain tools?
+
+ -- Christian T. Steigies <cts@debian.org>  Sat, 13 Oct 2001 20:17:28 -0400
+
+circuslinux (1.0.3-2) unstable; urgency=low
+
+  * Build-Depends on libsdl1.2-dev (>= 1.2.2-3.1), 
+    libsdl-image1.2-dev(>= 1.2.0-1.1), libsdl-mixer1.2-dev (>= 1.2.0-1.1)
+    due to SDL overhaul
+
+ -- Christian T. Steigies <cts@debian.org>  Wed, 10 Oct 2001 23:17:59 -0400
+
+circuslinux (1.0.3-1) unstable; urgency=low
+
+  * new upstream version
+  * build with SDL1.2 packages
+  * fix version number (this _is_ 1.0.3, not 1.0.2)
+  * improve clean target in debian/rules (rm circuslinux and circuslinux.o)
+  * update manpage (new --digital and --paddle options)
+  * update Standards-Version
+  * do not ship INSTALL.txt
+
+ -- Christian T. Steigies <cts@debian.org>  Tue,  5 Jun 2001 21:18:54 -0400
+
+circuslinux (1.0.1-3) unstable; urgency=low
+
+  * remove (unneeded) dh_suidregister from debian/rules
+  * debian/changelog
+
+ -- Christian T. Steigies <cts@debian.org>  Sat,  3 Feb 2001 21:16:47 +0100
+
+circuslinux (1.0.1-2) unstable; urgency=low
+
+  * rebuild with SDL1.0, sdl-image1.0 and sdl-mixer1.0
+
+ -- Christian T. Steigies <cts@debian.org>  Sat,  4 Nov 2000 01:24:15 +0100
+
+circuslinux (1.0.1-1) unstable; urgency=low
+
+  * New upstream version (closes: #65266)
+  * Fixed build-depends (closes: #65243)
+
+ -- Christian T. Steigies <cts@debian.org>  Tue,  6 Jun 2000 13:28:11 +0200
+
+circuslinux (0.0.4-2) unstable; urgency=low
+
+  * Added an improved description from Bill. I hope this (closes: #62417)
+    (the bug submitter never bothered to answer my questions)
+  * SDL 1.1 has appeared in the archives (closes: #62501)
+
+ -- Christian T. Steigies <cts@debian.org>  Thu, 11 May 2000 22:28:13 +0200
+
+circuslinux (0.0.4-1) unstable; urgency=low
+
+  * new upstream version, joystick not yet supported SDL available in debian
+  * when started from the menu, start in fullscreen mode
+
+ -- Christian T. Steigies <cts@debian.org>  Wed, 12 Apr 2000 18:11:53 +0200
+
+circuslinux (0.0.3-1) unstable; urgency=low
+
+  * new upstream version
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 10 Apr 2000 18:45:12 +0200
+
+circuslinux (0.0.2-2) unstable; urgency=low
+
+  * sdl-config --static-libs instead of --libs, thanks Roman
+  * closes: #61255  
+
+ -- Christian T. Steigies <cts@debian.org>  Tue, 28 Mar 2000 22:43:04 +0200
+
+circuslinux (0.0.2-1) unstable; urgency=low
+
+  * new upstream version
+  * icon is now provided upstream, don't convert the bitmap and 
+    no longer Build-Depend on imagemagick
+
+ -- Christian T. Steigies <cts@debian.org>  Mon, 13 Mar 2000 21:48:45 +0100
+
+circuslinux (0.0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Christian T. Steigies <cts@debian.org>  Thu, 10 Feb 2000 20:15:15 +0100
+
+

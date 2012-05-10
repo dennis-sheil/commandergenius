@@ -1,0 +1,106 @@
+# Portuguese translation of circuslinux's debconf messages.
+# Copyright (C) 2007
+# This file is distributed under the same license as the circuslinux package.
+# Luísa Lourenço <kikentai@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux 1.0.3-19\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-13 18:56+0100\n"
+"PO-Revision-Date: 2007-03-28 13:43+0100\n"
+"Last-Translator: Luísa Lourenço <kikentai@gmail.com>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid "Shared scorefile"
+msgstr "Ficheiro partilhado com as pontuações"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr ""
+"Esta versão do Circuslinux! usa um ficheiro partilhado de pontuações. A "
+"partir de agora as pontuações não serão mais guardadas em ~/.circuslinux mas "
+"sim em /var/games/circuslinux/scorefile. O novo ficheiro ~/.circuslinuxrc "
+"será usado para opcões de configuração."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr ""
+"Para juntar as antigas pontuações de todos os jogadores num ficheiro, pode correr:\n"
+"bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"como root."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr ""
+"Cada jogador pode, _depois_ de jogar pelo menos uma vez esta versão do "
+"Circuslinux!, apagar o seu ficheiro ~/.circuslinux, visto que as suas opcções "
+"de configuração serão guardadas em ~/.circuslinuxrc. Se o jogador decidir não "
+"apagar o ~/.circuslinux, ele pode ainda usar a versão do circuslinux que foi c"
+"ompilada sem suporte para o ficheiro de pontuações partilhado sem perder a "
+"sua antiga pontuação- e ficheiro de configuração. O Circuslinux! com suporte "
+"para o ficheiro de pontuação partilhado irá somente ler o ficheiro de "
+"configuração antigo para obter as opcções dos jogadores se o ~/.circuslinuxrc "
+"não existir, mas nunca escrever para este ficheiro."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:1001
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr ""
+"Em suma: não se preocupe, jogue o Circuslinux! Se ficar com pouco espaço no "
+"disco pode dizer aos seus utilizadores para removerem o ficheiro de "
+"configuração antigo."
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:2001
+msgid "Merge score files?"
+msgstr "Juntar ficheiros de pontuações?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:2001
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr "Quer que corra o script merge_scorefile por si?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:3001
+msgid "Scorefile exists"
+msgstr "Ficheiro de pontuações existe"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:3001
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "Um ficheiro de junção de pontuações já existe em /var/games/circuslinux!"

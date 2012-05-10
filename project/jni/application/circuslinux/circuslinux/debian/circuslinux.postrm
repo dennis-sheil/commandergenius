@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$1" = purge ] && [ -e /var/games/circuslinux/scorefile ]; then
+  rm /var/games/circuslinux/scorefile
+fi
+
+#DEBHELPER#

@@ -1,0 +1,108 @@
+# Vietnamese translation for circuslinux.
+# Copyright © 2005 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2005.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux 1.0.3-12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-04-19 21:27+0200\n"
+"PO-Revision-Date: 2005-06-13 17:02+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid "Shared scorefile"
+msgstr "Tập tin điểm dùng chung"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr ""
+"Phiên bản Circuslinux! này dùng một tập tin điểm dùng chung. Từ lúc này, sé "
+"không lưu điểm cao vào «~/.circuslinux»: sẽ lưu các điểm ấy vào «/var/games/"
+"circuslinux/scorefile» thay vào đó. Sẽ cũng sử dụng tập tin mới «~/."
+"circuslinuxrc» để sửa đổi cấu hình."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr ""
+"Để phối hợp các điểm cao của mọi người chơi vào cùng một tập tin, bạn có thể "
+"chạy lệnh này với tư cách người chủ (root):\n"
+"bash /usr/share/doc/circuslinux/merge_scorefiles.sh"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr ""
+"Sau đó, mỗi người chơi cần phải chơi phiên bản Circuslinux! này ít nhất một "
+"lần trước khi xóa bỏ tập tin «~/.circuslinux» của họ. Các tùy chọn cấu hình "
+"của họ sẽ được lưu vào tập tin «~/.circuslinuxrc», như nói trên. Nếu một "
+"người chơi nào đó quyết định không xóa bỏ tập tin «~/.circuslinux», trong "
+"trường hợp ấy họ vẫn còn có thể sử dụng một phiên bản Circuslinux! được biên "
+"dịch không có cách hỗ trợ tập tin điểm dùng chung, và không mất tập tin điểm "
+"và cấu hình cũ. Trình Circuslinux! mới, có cách hỗ trợ tập tin điểm dùng "
+"chung, sẽ đọc tập tin cấu hình cũ để gọi các tùy chọn của những người chơi "
+"chỉ nếu không có tập tin «~/.circuslinuxrc». Nó sẽ không bao giờ ghi vào tập "
+"tin cũ ấy."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr ""
+"Tức là, đừng lo bạn, chơi đi! Nếu bạn không có đủ sức chứa trên đĩa, có lẽ "
+"bạn sẽ muốn loại bỏ các tập tin cấu hình ấy. Nếu không thì không có sao."
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Merge score files?"
+msgstr "Phối hợp các tập tin điểm không?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr ""
+"Bạn có muốn trình này chạy tập lệnh «merge_scorefile» (phối tập tin điểm) "
+"cho bạn không?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "Scorefile exists"
+msgstr "Có tập tin điểm rồi"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "Có một tập tin điểm đã phối hợp trong «/var/games/circuslinux» rồi."

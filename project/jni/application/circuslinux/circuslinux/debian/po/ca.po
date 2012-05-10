@@ -1,0 +1,89 @@
+# translation of circuslinux_1.0.3-11_templates.po to catalan
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+# Jordi Fernández Mora <jordi.fernandezmo@campus.uab.es>, 2004.
+# Miguel Gea Milvaques <debian@miguelgea.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux_1.0.3-11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-08-11 09:29+0200\n"
+"PO-Revision-Date: 2004-12-13 23:46+0100\n"
+"Last-Translator: Miguel Gea Milvaques <debian@miguelgea.com>\n"
+"Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#. Description
+#: ../circuslinux.templates:3
+msgid "Shared scorefile"
+msgstr "Fitxer de puntuacions compartit"
+
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr "Aquesta versió de Circuslinux fa servir un fitxer de puntuacions compartit. A partir d'ara els rècords no es guardaran a ~/.circuslinux sinó a /var/games/circuslinux/scorefile. Per les opcions de configuració feu servir el fitxer ~/.circuslinuxrc."
+
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr "Per ajuntar tots els rècords dels jugadors vells a un fitxer cal executar: \n bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n com a root. "
+
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr "Cada jugador pot, després de jugar a aquesta versió de Circuslinux! com a mínim un cop, suprimir el seu ~/.circuslinux, ja que les seves opcions de configuració seran desades a ~/circuslinuxrc. Si el jugador decideix no borrar el fitxer ~/circuslinux, encara pot fer servir una versió ja compilada sense el fitxer de puntuacions compartit sense perdre les antigues puntuacions ni les seves configuracions. Circuslinux! amb el fitxer de puntuacions compartit només llegirà el fitxer antic per agafar les opcions dels jugadors si no existeix el fitxer ~/circuslinuxrc, tot i això mai escriurà en ell."
+
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr "No es preocupeu, jugueu Circuslinux! Si teniu poc espai de disc i cada bloc conta, podeu dir als usuaris que borrin el fitxer de configuració vell."
+
+#. Description
+#: ../circuslinux.templates:28
+msgid "Merge score files?"
+msgstr "Ajuntem els fitxers de puntuacions?"
+
+#. Description
+#: ../circuslinux.templates:28
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr "Voleu que executi el guió merge_scorefiles per vosaltres ?"
+
+#. Description
+#: ../circuslinux.templates:33
+msgid "Scorefile exists"
+msgstr "Existeix el fitxer de puntuacions"
+
+#. Description
+#: ../circuslinux.templates:33
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "Ja existeix un fitxer de puntuacions ajuntat anteriorment a /var/games/circuslinux!"
+

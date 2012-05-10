@@ -1,0 +1,34 @@
+Template: circuslinux/shared_score_file
+Type: note
+_Description: Shared scorefile
+ This version of Circuslinux! uses a shared score file. From now on
+ highscores will no longer be saved in ~/.circuslinux but in
+ /var/games/circuslinux/scorefile. For configuration options the new file
+ ~/.circuslinuxrc will be used.
+ .
+ To merge all players' old highscores into one file, you can run:
+  bash /usr/share/doc/circuslinux/merge_scorefiles.sh
+ as root.
+ .
+ Each player can then, _after_ playing this version of Circuslinux! at
+ least once, delete his ~/.circuslinux file, since his configuration
+ options will be saved in  ~/.circuslinuxrc. If the player decides not to
+ delete ~/.circuslinux, he can still use a version of circuslinux which was
+ compiled without shared scorefile support without loosing his old score-
+ and config file. Circuslinux! with shared scorefile support will only read
+ the old config file to get the players options if ~/.circuslinuxrc does
+ not exist, but never write to this file.
+ .
+ In short: don't worry, play Circuslinux! If you run low on diskspace and
+ every block counts, you might tell your users to remove the old config
+ file.
+
+Template: circuslinux/merge_score_files
+Type: boolean
+_Description: Merge score files?
+ Do you want me to run the merge_scorefile script for you?
+
+Template: circuslinux/score_file_exists
+Type: boolean
+_Description: Scorefile exists
+ A merged scorefile in /var/games/circuslinux already exists!

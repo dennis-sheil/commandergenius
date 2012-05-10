@@ -1,0 +1,119 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: circuslinux (1.0.3-6)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-04-19 21:27+0200\n"
+"PO-Revision-Date: 2003-08-11 09:25+0100\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid "Shared scorefile"
+msgstr "Fichier de scores partagé"
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"This version of Circuslinux! uses a shared score file. From now on "
+"highscores will no longer be saved in ~/.circuslinux but in /var/games/"
+"circuslinux/scorefile. For configuration options the new file ~/."
+"circuslinuxrc will be used."
+msgstr ""
+"Cette version de Circuslinux! utilise un fichier de scores partagé. À partir "
+"de maintenant, les scores les plus élevés ne seront plus préservés dans ~/."
+"circuslinux mais dans le fichier /var/games/circuslinux/scorefile. Les "
+"options de configuration seront, elles, conservées dans un nouveau fichier : "
+"~/.circuslinuxrc."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"To merge all players' old highscores into one file, you can run:\n"
+" bash /usr/share/doc/circuslinux/merge_scorefiles.sh\n"
+"as root."
+msgstr ""
+"Si vous souhaitez fusionner les scores les plus élevés de tous les joueurs "
+"en un seul fichier, vous pouvez utiliser, en tant que super-utilisateur, la "
+"commande « bash /usr/share/doc/circuslinux/merge_scorefiles.sh »."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"Each player can then, _after_ playing this version of Circuslinux! at least "
+"once, delete his ~/.circuslinux file, since his configuration options will "
+"be saved in  ~/.circuslinuxrc. If the player decides not to delete ~/."
+"circuslinux, he can still use a version of circuslinux which was compiled "
+"without shared scorefile support without loosing his old score- and config "
+"file. Circuslinux! with shared scorefile support will only read the old "
+"config file to get the players options if ~/.circuslinuxrc does not exist, "
+"but never write to this file."
+msgstr ""
+"Chaque joueur pourra alors, _après_ avoir joué au moins une fois à "
+"Circuslinux!, effacer son fichier ~/.circuslinux puisque ses options seront "
+"alors préservées dans ~/.circuslinuxrc. Si le joueur préfère ne pas effacer "
+"ce fichier, il peut continuer à utiliser une version de Circuslinux! "
+"compilée sans la gestion du fichier de scores partagé. Ainsi, il ne perdra "
+"pas ses anciens fichiers de scores et de configuration. Circuslinux! avec "
+"gestion du fichier de scores partagé utilisera l'ancien fichier pour lire "
+"les options des joueurs, si un fichier ~/.circuslinuxrc n'existe pas. "
+"Cependant, il n'écrira jamais dans cet ancien fichier."
+
+#. Type: note
+#. Description
+#: ../circuslinux.templates:3
+msgid ""
+"In short: don't worry, play Circuslinux! If you run low on diskspace and "
+"every block counts, you might tell your users to remove the old config file."
+msgstr ""
+"En résumé : pas de panique et jouez à Circuslinux!. Si vous manquez d'espace "
+"disque et que chaque bloc compte, vous pouvez demander à vos utilisateurs de "
+"supprimer leurs anciens fichiers de configuration."
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Merge score files?"
+msgstr "Faut-il fusionner les fichiers de scores ?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:28
+msgid "Do you want me to run the merge_scorefile script for you?"
+msgstr ""
+"Souhaitez-vous que les fichiers de scores soient fusionnés automatiquement ?"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "Scorefile exists"
+msgstr "Un fichier de scores existe déjà"
+
+#. Type: boolean
+#. Description
+#: ../circuslinux.templates:33
+msgid "A merged scorefile in /var/games/circuslinux already exists!"
+msgstr "Un fichier de scores est déjà présent dans /var/games/circuslinux !"
+
+#~ msgid "You already have a scorefile!"
+#~ msgstr "Un fichier de scores est déjà présent sur le système !"
