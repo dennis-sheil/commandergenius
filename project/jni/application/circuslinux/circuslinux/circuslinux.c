@@ -15,11 +15,11 @@
   December 11, 1999 - April 28, 2001
 */
 
-#ifndef SHARED_SCOREFILE_YES
-#ifndef SHARED_SCOREFILE_NO
-#error something went wrong in configure, either SHARED_SCOREFILE_YES or SHARED_SCOREFILE_NO must be defined. Please tell cts@debian.org how you did this.
-#endif
-#endif
+//#ifndef SHARED_SCOREFILE_YES
+//#ifndef SHARED_SCOREFILE_NO
+//#error something went wrong in configure, either SHARED_SCOREFILE_YES or SHARED_SCOREFILE_NO must be defined. Please tell cts@debian.org how you did this.
+//#endif
+//#endif
 
 /* Constraints: */
 
