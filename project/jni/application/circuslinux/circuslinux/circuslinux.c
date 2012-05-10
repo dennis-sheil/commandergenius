@@ -50,6 +50,14 @@
 #define POPPING0 2
 #define POPPING1 2
 
+/* Android specific */
+#ifndef VERSION
+#define VERSION "1.0.0"
+#endif
+#ifndef DATA_PREFIX
+#define DATA_PREFIX "./"
+#endif
+
 
 /* #includes: */
 
@@ -1841,7 +1849,7 @@ int game(void)
       /* Update the screen: */
       
       if (use_low == 0 || (frame % 2))
-	SDL_UpdateRects(screen, num_rects, rects);
+	SDL_Flip(screen);
       
       
       /* Pause: */
