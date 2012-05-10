@@ -3006,9 +3006,11 @@ void setup(void)
       dest.h = 10;
       
       col = (255 * i) / NUM_IMAGES;
-      
+
+      /*      
       SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, col, col, col));
       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+      */
       SDL_Delay(1);
     }
   
