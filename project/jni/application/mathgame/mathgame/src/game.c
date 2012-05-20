@@ -2188,9 +2188,12 @@ void game_draw(void)
                   64);
   }
 
+// Android is not picking up that this is defined for some
+// reason, so I just turn it on by default here
+//
   /* Draw numeric keypad: */
-  if (Opts_GetGlobalOpt(USE_KEYPAD))
-  {
+//  if (Opts_GetGlobalOpt(USE_KEYPAD))
+//  {
     /* pick image to draw: */
     int keypad_image;
     if (MC_GetOpt(ALLOW_NEGATIVES) )
@@ -2210,7 +2213,7 @@ void game_draw(void)
     dest.w = images[keypad_image]->w;
     dest.h = images[keypad_image]->h;
     SDL_BlitSurface(images[keypad_image], NULL, screen, &dest);
-  }
+//  }
 
   /* Draw console, LED numbers, & tux: */
   draw_led_console();
@@ -3523,14 +3526,18 @@ void game_mouse_event(SDL_Event event)
     return;
   }
 
+  // We really are using keypad, but Opts_GetGlobalOpt(USE_KEYPAD)
+  // is not picked up it seems.  We should look into why that is.
+  //
   /* get out unless we really are using keypad */
+  /*
   if ( level_start_wait
     || Opts_DemoMode()
     || !Opts_GetGlobalOpt(USE_KEYPAD))
   {
     return;
   }
-
+  */
 
   /* make sure keypad image is valid and has non-zero dimensions: */
   /* FIXME maybe this checking should be done once at the start */

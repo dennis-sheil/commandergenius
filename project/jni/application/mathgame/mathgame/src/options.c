@@ -280,10 +280,10 @@ void Opts_SetOperOverride(int val)
 }
 
 
-//void Opts_SetUseKeypad(int val)
-//{
-//  global_options->iopts[USE_KEYPAD] = int_to_bool(val);
-//}
+void Opts_SetUseKeypad(int val)
+{
+  global_options->iopts[USE_KEYPAD] = int_to_bool(val);
+}
 
 
 void Opts_SetAllowPause(int val)
@@ -683,17 +683,17 @@ int Opts_OperOverride(void)
 }
 
 
-//int Opts_UseKeypad(void)
-//{
-//  if (!game_options)
-//  {
-//    fprintf(stderr, "\nOpts_UseKeypad(): game_options not valid!\n");
-//    return GAME_OPTS_INVALID;
-//  }
-//  return global_options->iopts[USE_KEYPAD];
-//}
-//
-//
+int Opts_UseKeypad(void)
+{
+  if (!game_options)
+  {
+    fprintf(stderr, "\nOpts_UseKeypad(): game_options not valid!\n");
+    return GAME_OPTS_INVALID;
+  }
+  return global_options->iopts[USE_KEYPAD];
+}
+
+
 int Opts_AllowPause(void)
 {
   if (!game_options)
