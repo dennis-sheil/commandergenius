@@ -557,6 +557,13 @@ void initialize_SDL(void)
     const SDL_VideoInfo *videoInfo;
     Uint32 surfaceMode;
     videoInfo = SDL_GetVideoInfo();
+
+    // For Android, we are only doing software mode for now.  In the future
+    // we may do hardware mode, but for now we are forcing software mode.
+    //
+    surfaceMode = SDL_SWSURFACE;
+
+/*
     if (videoInfo->hw_available)
     {
       surfaceMode = SDL_HWSURFACE;
@@ -567,6 +574,7 @@ void initialize_SDL(void)
       surfaceMode = SDL_SWSURFACE;
       DEBUGMSG(debug_setup, "SW mode\n");
     }
+*/
 
     // Determine the current resolution: this will be used as the
     // fullscreen resolution, if the user wants fullscreen.
