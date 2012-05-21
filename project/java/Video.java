@@ -58,6 +58,7 @@ import java.util.LinkedList;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
+import android.media.AudioManager;
 
 class Mouse
 {
@@ -617,6 +618,19 @@ class DemoGLSurfaceView extends GLSurfaceView_SDL {
 	// This seems like redundant code - it handled in MainActivity.java
 	@Override
 	public boolean onKeyDown(int keyCode, final KeyEvent event) {
+
+        // handle volume up and volume down 
+               if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
+                       AudioManager audioManager = (AudioManager) mParent.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+                       audioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND);
+                       return true;
+               }
+               else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+                       AudioManager audioManager = (AudioManager) mParent.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+                       audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
+                       return true;
+               }
+
 		if( nativeKey( keyCode, 1 ) == 0 )
 				return super.onKeyDown(keyCode, event);
 		return true;
