@@ -29,15 +29,15 @@ To build, you must create the directory
 project/jni/application/mathgame/AndroidData
 
 Then everything in project/jni/application/mathgame/mathgame/data must 
-be zipped up and moved to AndroidData(within the data directory, 
+be zipped up and moved to AndroidData (within the data directory, 
 something like: zip -r data.zip *).
 
 Then the zip file must be split up (split -b 1000000 -d data.zip 
 data.zip) within AndroidData, and then the data.zip file erased.
 
 Every change you make to data, you must manually repeat this process 
-(zip to data.zip, move data.zip, split data.zip, erase data.zip)
-before  building.
+zip to data.zip, move data.zip, split data.zip, erase data.zip)
+before building.
 
 Check that the link project/jni/application/src is pointing to 
 project/jni/application/tuxmath properly.
@@ -49,8 +49,10 @@ android update project -p project -t android-15
 sh build.sh
 
 This should install the APK on your attached Android device or emulator. 
+
 After those steps, the project subdirectory should have the standard 
-Android build needed for an ant-type install.
+Android build needed for an ant-type install.  Although "sh build.sh" 
+installs a debug APK to your Android device/emulator anyhow.
 
 
 Todo:
@@ -59,12 +61,14 @@ Todo:
 On Android, some of the SDL_UpdateRect's and UpdateRect's are not 
 updating properly.  A whole screen SDL_Flip can fix this as a kludge.  
 We can investigate what the problem is.  This problem is not exclusive 
-to Tux Math, it occurs on other programs using this Android port, so the 
-problem might be with the port of the SDL_UpdateRect function instead of 
-TuxMath's implementation of this function.  But the kludge would go into 
-TuxMath's code if used.  It appears by the rectangles that are supposed 
-to update blinking in an odd manner, with random memory images being 
-shown over the rectangle which is supposed to get the update.
+to Tux Math, it occurs on other programs using this Android port of the 
+SDL library, so the problem might be with the port of the SDL_UpdateRect 
+function instead of TuxMath's implementation of this function.  But if 
+the kludge was used it would go into TuxMath's code, not the code for 
+the framework for the SDL port.  It appears that the rectangles that are 
+supposed to update are blinking in an odd manner, with random memory 
+images being shown over the rectangle which is supposed to get the 
+rectangle update.
 
 Network functionality does not work.  Four files were moved from the src 
 subdirectory to a new subdirectory called reacclimate.  Those four files 
@@ -85,6 +89,9 @@ We force software mode for now, we can investigate hardware mode in the
 future.
 
 We have done no work to allow custom games.
+
+The config.h file in src was not gone over stringently, some of the 
+defines in there can easily be wrong.
 
 The volume keys are caught in the Video.java file and dealt with there.  
 Perhaps this should be dealt with in the keys reddefined in 
