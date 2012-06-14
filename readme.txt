@@ -36,7 +36,7 @@ Then the zip file must be split up (split -b 1000000 -d data.zip
 data.zip) within AndroidData, and then the data.zip file erased.
 
 Every change you make to data, you must manually repeat this process 
-zip to data.zip, move data.zip, split data.zip, erase data.zip)
+(zip to data.zip, move data.zip, split data.zip, erase data.zip)
 before building.
 
 Check that the link project/jni/application/src is pointing to 
@@ -45,7 +45,7 @@ project/jni/application/tuxmath properly.
 Then do:
 
 ./ChangeAppSettings.sh -a
-android update project -p project -t android-15
+android update project -p project -t android-12
 sh build.sh
 
 This should install the APK on your attached Android device or emulator. 
