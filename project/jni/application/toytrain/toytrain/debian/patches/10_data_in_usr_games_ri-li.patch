@@ -1,0 +1,44 @@
+diff -ru Ri-li-1.2.0.orig/configure Ri-li-1.2.0/configure
+--- Ri-li-1.2.0.orig/configure	2006-07-22 02:29:43.000000000 +0200
++++ Ri-li-1.2.0/configure	2006-07-22 02:30:06.000000000 +0200
+@@ -1612,7 +1612,7 @@
+ 
+ 
+ # Define the identity of the package.
+- PACKAGE=Ri-li
++ PACKAGE=ri-li
+  VERSION=1.2.0
+ 
+ 
+diff -ru Ri-li-1.2.0.orig/configure.in Ri-li-1.2.0/configure.in
+--- Ri-li-1.2.0.orig/configure.in	2006-07-22 02:29:43.000000000 +0200
++++ Ri-li-1.2.0/configure.in	2006-07-22 02:30:22.000000000 +0200
+@@ -2,7 +2,7 @@
+ # Process this file with autoconf to produce a configure script.
+ 
+ AC_INIT(src/main.cc)
+-AM_INIT_AUTOMAKE(Ri-li, 1.2.0)
++AM_INIT_AUTOMAKE(ri-li, 1.2.0)
+ 
+ AC_CONFIG_SRCDIR([src/main.cc])
+ AC_CONFIG_HEADER([config.h])
+diff -ru Ri-li-1.2.0.orig/src/utils.cc Ri-li-1.2.0/src/utils.cc
+--- Ri-li-1.2.0.orig/src/utils.cc	2006-07-22 02:29:43.000000000 +0200
++++ Ri-li-1.2.0/src/utils.cc	2006-07-22 02:31:30.000000000 +0200
+@@ -236,15 +236,7 @@
+     if(FileExiste(Path)) return;
+   }
+ 
+-  sprintf(Path,"%s/%s",DATA_DIR,Provi);
+-  if(FileExiste(Path)) return;
+-  sprintf(Path,"./%s",Provi);
+-  if(FileExiste(Path)) return;
+-  sprintf(Path,"/usr/local/share/Ri-li/%s",Provi);
+-  if(FileExiste(Path)) return;
+-  sprintf(Path,"/usr/share/Ri-li/%s",Provi);
+-  if(FileExiste(Path)) return;
+-  sprintf(Path,"/usr/share/games/Ri-li/%s",Provi);
++  sprintf(Path,"/usr/share/games/ri-li/%s",Provi);
+   if(FileExiste(Path)) return;
+   
+   cerr <<"Impossible de trouver le fichier '"<<Provi<<endl;

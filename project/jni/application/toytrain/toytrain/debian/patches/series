@@ -1,0 +1,2 @@
+40_fix_gcc4.3_ftbfs -p1
+50_remove_-lpthread.diff -p1

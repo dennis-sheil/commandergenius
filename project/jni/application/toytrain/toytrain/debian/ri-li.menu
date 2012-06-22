@@ -1,0 +1,4 @@
+?package(ri-li):needs="X11" section="Games/Action"\
+  title="Ri-li" command="/usr/games/ri-li" \
+  longtitle="Ri-li - A toy simulator game" \
+  icon="ri-li.xpm"

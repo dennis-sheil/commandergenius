@@ -1,0 +1,129 @@
+ri-li (2.0.1-2) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * Add myself to uploaders.
+  * Fix binary-indep target. (Closes: #470311).
+
+  [ Gonéri Le Bouder ]
+  * clean the .pc directory
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sun, 20 Apr 2008 21:32:04 +0200
+
+ri-li (2.0.1-1) unstable; urgency=low
+
+  [ Cyril Brulebois ]
+  * Fix typos in the long description (Closes: #444827).
+  * Fix FTBFS with gcc 4.3 by getting rid of pre-ISO C++ headers,
+    replacing “#include <iostream.h>” with “#include <iostream>”
+    followed by “using namespace std;” (Closes: #461705). Add the
+    40_fix_gcc4.3_ftbfs patch to this effect.
+
+  [ Eddy Petrișor ]
+  * remove myself from the Uploaders list
+
+  [ Barry deFreese ]
+  * New upstream release
+  * Remove deprecated encoding tag from desktop file and full path in exec
+  * Remove XS- from VCS fields in control
+  * Add Homepage field in control
+  * 20_remove_gentoo_dir.diff - Remove gentoo subdir from Makefile.*
+  * Bug #383007 mentions using a merged tarball to get the data package
+    + source but I am not sure how to effectively do that.
+
+  [ Gonéri Le Bouder ]
+  * add 50_remove_-lpthread.diff so the linker is not called with the useless
+    -lpthread, the patch contains the regenerated autofoo files but the
+    original change is just a # on front of AC_CHECK_LIB([pthread],
+    [pthread_create]) in configure.in
+  * remove the Homepage entries in the descriptions
+  * refresh debian/copyright, now the game is released under the GLPv3
+  * bump the Standards-version to 3.7.3 with no change
+
+  [ Peter De Wachter ]
+  * fix the watchfile (Closes: #453560)
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sat, 16 Feb 2008 16:06:45 +0100
+
+ri-li (2.0.0-4) unstable; urgency=low
+
+  * do not install Gentoo .ebuild (Closes: #432171) 
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Mon, 17 Sep 2007 00:02:26 +0200
+
+ri-li (2.0.0-3) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * .desktop file should not contain category "Application" (Closes: #401285)
+    thanks Pino Toscano.
+  * better Romanian comment in .desktop file
+  * really install the .desktop file (Closes: #388462)
+  * add myself to the uploaders field and fixed its syntax (Closes: #409185).
+  * use ${source:Version} instead of deprecated ${Source-Version} and add dpkg
+    (>= 1.13.19) as a build-dependency
+
+  [ Jon Dowland ]
+  * update menu section to "Games/Action" for menu policy transition.
+    Thanks Linas Žvirblis.
+
+  [ Cyril Brulebois ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+  [ Gonéri Le Bouder ]
+  * do not ignore make distclean return
+  * use dh_clean instead of rm -rf
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Tue, 14 Aug 2007 20:52:04 +0000
+
+ri-li (2.0.0-2) unstable; urgency=high
+
+  [ Eddy Petrișor ]
+  * install the .desktop file (Closes: #388462)
+
+  [ Cyril Brulebois ]
+  * Changed `$(PWD)' to `$(CURDIR)' in debian/rules, which fixes the FTBFS on
+    buildds using `sudo' and not `fakeroot', since the $(PWD) is changed when
+    sudo is invoked, due to the user change (Closes: #400547).
+  * Urgency set to `high' due to RC-buggyness.
+  * Added myself in the Uploaders field.
+
+ -- Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>  Mon, 27 Nov 2006 10:51:24 +0100
+
+ri-li (2.0.0-1) unstable; urgency=low
+
+  [ Gonéri Le Bouder ]
+  * new upstream release (Closes: #394203)
+  * remove bash releated paragraph in copyright file (Closes: #379277)
+  * apply patch from H. S. Teoh <hsteoh@quickfur.ath.cx> (Closes: #381602)
+  * fix a double space in description (Closes: #392188) Thanks  
+    Reuben Thomas
+  * do not use CDBS anymore
+  * builddeps on quilt
+  * remove useless builddeps on libvorbis-dev, libogg-dev, libsmpeg-dev,
+    libdirectfb-dev
+  * fix: warning not-binnmuable-any-depends-all ri-li -> ri-li-data
+
+  [ Eddy Petrișor ]
+  * translatated into Romanian the desktop file's comment and explicitly
+    declared the encoding of the file
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Tue,  5 Sep 2006 11:08:24 +0300
+
+ri-li (1.2.0-1) unstable; urgency=low
+
+  * new upstream release
+  * music license clarified
+   -remove 20_turn_of_music_in_dfsg_tarball.patch
+   -add Maf464 in copyright file
+  * update description
+  * minor changes in rules file
+   
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sat, 22 Jul 2006 02:09:59 +0200
+
+
+ri-li (1.0.2.dfsg.1-1) unstable; urgency=low
+
+  * Initial Release (Closes: #378047, #377571)
+  * xm files were removed from the tarball
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Mon, 3 Jul 2006 17:21:22 +0200
+

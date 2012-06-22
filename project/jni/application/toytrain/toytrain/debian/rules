@@ -1,0 +1,84 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+CPPFLAGS = -Wall
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+  CPPFLAGS += -O0
+else
+  CPPFLAGS += -O2
+endif
+
+config-stamp:
+	QUILT_PATCHES=debian/patches quilt push -a || test $$? = 2
+	touch aclocal.m4
+	touch configure
+	touch `find . -name Makefile.in`
+	./configure --datadir=/usr/share/games/ri-li --bindir=/usr/games
+	touch config-stamp
+
+build: build-stamp
+build-stamp: config-stamp
+	dh_testdir
+	$(MAKE)
+	docbook-to-man debian/ri-li.sgml > debian/ri-li.6
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	[ ! -f Makefile ] || $(MAKE) distclean
+	QUILT_PATCHES=debian/patches quilt pop -a -R || test $$? = 2
+	[ ! -d .pc ] || rm -r .pc
+	dh_clean config.log config-stamp build-stamp debian/ri-li.6 [config.h].in
+
+install: install-stamp
+install-stamp: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_installman debian/ri-li.6
+	DESTDIR=$(CURDIR)/debian/tmp $(MAKE) install
+	find debian/tmp -name '*.ebuild' -exec rm {} \;
+	mkdir -p debian/tmp/usr/share/pixmaps/
+	cp debian/ri-li.xpm debian/tmp/usr/share/pixmaps/
+	mv debian/tmp/usr/games/Ri_li debian/tmp/usr/games/ri-li
+	rm debian/tmp/usr/share/games/ri-li/Ri-li/COPYING.Music
+
+binary-indep: build install
+	dh_testdir -i
+	dh_testroot -i
+	dh_install -i
+	dh_installdocs -i README AUTHORS NEWS
+	dh_installchangelogs -i
+	dh_strip -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary-arch: build install
+	dh_testdir -a
+	dh_testroot -a
+	dh_install -a
+	dh_installdocs -a README AUTHORS NEWS
+	dh_installmenu -a
+	dh_desktop -a debian/ri-li.desktop
+	dh_installchangelogs -a
+	dh_link -a
+	dh_strip -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

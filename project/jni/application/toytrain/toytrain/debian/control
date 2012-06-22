@@ -1,0 +1,37 @@
+Source: ri-li
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Stu Teasdale <sdt@debian.org>, Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>, Barry deFreese <bddebian@comcast.net>
+Build-Depends: debhelper (>= 5.0.0), libsdl-mixer1.2-dev, libsdl1.2-dev, zlib1g-dev, docbook-to-man, quilt, dpkg-dev (>= 1.13.19)
+Standards-Version: 3.7.3
+Homepage: http://www.ri-li.org/
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/ri-li/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/ri-li/?op=log
+
+Package: ri-li
+Section: games
+Architecture: any
+Depends: ${shlibs:Depends}, ri-li-data (>= ${source:Version})
+Description: a toy train simulation game
+ Ri-Li is a game in which you drive a toy wood engine across many levels 
+ and collect all the coaches to win.
+ .
+ Full-features:
+  - 14 languages: Arabic, Breton, Chinese, English, Esperanto, French,
+  German, Italian, Japanese, Portuguese, Russian, Slovak,
+  Spanish, Swedish.
+  - Colorful animated wood engine.
+  - 40 levels in this first version
+  - 3 beautiful musics and many sound effects.
+
+Package: ri-li-data
+Recommends: ri-li
+Section: games
+Architecture: all
+Depends: ${shlibs:Depends}
+Description: data files for Ri-li, a toy train simulation game
+ Ri-Li is a game in which you drive a toy wood engine across many levels 
+ and collect all the coaches to win.
+ .
+ This package provide data files for the game.
