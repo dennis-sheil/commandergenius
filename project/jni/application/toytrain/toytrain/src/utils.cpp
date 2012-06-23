@@ -68,8 +68,8 @@ bool FileExiste(const char *Path)
 
 /*** Charge un fichier en Mémoire ***/
 /************************************/
-#ifdef MAC_LINUX
-// Version linux
+//#ifdef MAC_LINUX
+// Version linux and Android
 long ChargeFichier(const char *Path,unsigned char *&Buf)
 {
   FILE *file;
@@ -120,7 +120,7 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
   fclose(file);
   return L;
 }
-#endif
+//#endif
 
 #ifdef WINDOWS
 // Version windows
@@ -160,8 +160,8 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
 
 /*** Sauve un Fichier ***/
 /************************/
-#ifdef MAC_LINUX
-// Version linux
+//#ifdef MAC_LINUX
+// Version linux and Android
 bool SauveFichier(const char *Path,char *Buf,long L)
 {
   FILE *file;
@@ -196,7 +196,7 @@ bool SauveFichier(const char *Path,char *Buf,long L)
   fclose(file);
   return true;
 }
-#endif
+//#endif
 
 #ifdef WINDOWS
 // Version windows
@@ -286,11 +286,11 @@ void GetPath(char *Path)
 }
 #endif
 
-#ifdef WINDOWS
-//  Version Windows , chemin directe
+//#ifdef WINDOWS
+//  Version Windows , chemin directe.  Also Android
 void GetPath(char *Path)
 { }
-#endif
+//#endif
 
 /*** Charge les préferences ***/
 /******************************/
@@ -319,6 +319,10 @@ bool LoadPref(void)
   // Version Windows, Chemin directe
   char *PathPref="ri-li.pref";
 #endif
+
+// Android definition of PathPref
+char *PathPref="./toytrain.pref";
+
   
   if(FileExiste(PathPref)) {
     L=ChargeFichier(PathPref,Provi);
