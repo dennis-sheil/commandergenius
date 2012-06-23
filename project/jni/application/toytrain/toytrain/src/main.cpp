@@ -26,6 +26,7 @@
 #include <string.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_mixer.h>
+#include <SDL_screenkeyboard.h> 
 
 #include "preference.h"
 #include "jeux.h"
@@ -145,6 +146,9 @@ int main(int narg,char *argv[])
   // we could increase bits per pixel and the like if we wanted to
   //sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
   sdlVideo=SDL_SetVideoMode(800,600,16,SDL_SWSURFACE);
+
+  SDL_Rect r = {0,0,0,0};
+  SDL_ANDROID_SetScreenKeyboardButtonPos(SDL_ANDROID_SCREENKEYBOARD_BUTTON_TEXT, &r);
 
   if(sdlVideo==NULL) {
     //cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
