@@ -113,6 +113,7 @@ eMenu Jeux::SDLMain(void)
 	break;
       case SDL_MOUSEBUTTONDOWN:
 	if(event.button.state==SDL_PRESSED) TourneFleche();
+        Pause = false; // unpause with screen touch on Android
 	break;
       case SDL_KEYDOWN:
 	if(event.key.state==SDL_PRESSED) {
