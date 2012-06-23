@@ -108,8 +108,18 @@ void ChangeVideo(void)
 #endif
 #endif
 
-  if(Pref.FullScreen) vOption|=SDL_FULLSCREEN;
-  sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
+  int bitsPerPixel = 0;
+  if(Pref.FullScreen) {
+    vOption|=SDL_FULLSCREEN;
+    bitsPerPixel = 32;
+  }
+  else {
+    vOption=SDL_SWSURFACE;
+    bitsPerPixel = 16;
+  }
+
+  //sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
+  sdlVideo=SDL_SetVideoMode(800,600,bitsPerPixel,vOption);
   if(sdlVideo==NULL) {
     //cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
     exit(-1);

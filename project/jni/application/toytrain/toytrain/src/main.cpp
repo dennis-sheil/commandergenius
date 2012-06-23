@@ -141,7 +141,10 @@ int main(int narg,char *argv[])
 #endif
 #endif
   if(Pref.FullScreen) vOption|=SDL_FULLSCREEN;
-  sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
+
+  // we could increase bits per pixel and the like if we wanted to
+  //sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
+  sdlVideo=SDL_SetVideoMode(800,600,16,SDL_SWSURFACE);
 
   if(sdlVideo==NULL) {
     //cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
