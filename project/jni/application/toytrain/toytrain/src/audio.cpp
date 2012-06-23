@@ -133,7 +133,8 @@ void Audio::LoadMusic(int Num)
   else {
     Provi[10]=(char)(Num)+'0';
     GetPath(Provi);
-    Music=Mix_LoadMUS(Provi);
+    // crashes Android, so, disabling for now
+    //Music=Mix_LoadMUS(Provi);
   }
   PlayMusic();
 }
