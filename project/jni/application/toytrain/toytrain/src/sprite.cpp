@@ -21,7 +21,6 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.,
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-#include <iostream.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -84,7 +83,7 @@ bool LoadLangue()
   strcpy(PathFile,Langue[Pref.Langue]);
   GetPath(PathFile);
   if(FileExiste(PathFile)==false) {
-    cerr <<"Impossible de trouver "<<Langue[Pref.Langue]<<endl;
+    //cerr <<"Impossible de trouver "<<Langue[Pref.Langue]<<endl;
     return false;
   }
   L=ChargeFichier(PathFile,Buf);
@@ -128,7 +127,7 @@ bool LoadSprites()
   // *** Charge le fichier des langues ***
   // *************************************
   if(FileExiste(PathFile)==false) {
-    cerr <<"Impossible de trouver 'language.dat'"<<endl;
+    //cerr <<"Impossible de trouver 'language.dat'"<<endl;
     return false;
   }
   L=ChargeFichier(PathFile,Buf);
@@ -163,7 +162,7 @@ bool LoadSprites()
   strcpy(PathFile,"sprites.dat");
   GetPath(PathFile);
   if(FileExiste(PathFile)==false) {
-    cerr <<"Impossible de trouver 'sprites.dat'"<<endl;
+    //cerr <<"Impossible de trouver 'sprites.dat'"<<endl;
     return false;
   }
   L=ChargeFichier(PathFile,Buf);
@@ -352,7 +351,7 @@ bool Sprite::Load(unsigned char *Buf,long &P)
     Image[i]=SDL_CreateRGBSurface((Dim[i].bpp-3)*SDL_SRCALPHA,Dim[i].L,Dim[i].H,Dim[i].bpp*8,
 				  0xff,0xff00,0xff0000,0xff000000*(Dim[i].bpp-3));
     if(Image[i]<=NULL) {
-      cerr <<"Impossible de créer une Surface SDL!"<<endl;
+      //cerr <<"Impossible de créer une Surface SDL!"<<endl;
       return false;
     }
     
@@ -486,7 +485,7 @@ bool Sprite::Nouveau(int Lx,int Ly)
   Image[0]=SDL_CreateRGBSurface((Dim[0].bpp-3)*SDL_SRCALPHA,Dim[0].L,Dim[0].H,Dim[0].bpp*8,
 				0xff,0xff00,0xff0000,0xff000000*(Dim[0].bpp-3));
   if(Image[0]<=NULL) {
-    cerr <<"Impossible de créer une Surface SDL!"<<endl;
+    //cerr <<"Impossible de créer une Surface SDL!"<<endl;
     return false;
   }
   return true;

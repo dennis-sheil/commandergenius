@@ -22,7 +22,6 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include <stdlib.h>
-#include <iostream.h>
 #include <string.h>
 
 #include "audio.h"
@@ -57,7 +56,7 @@ bool Audio::Init(void)
   char PathFile[512];
 
   if(Mix_OpenAudio(22050,AUDIO_S16,1,1024)) {
-    cerr <<"Enable to init Sound card ! "<<SDL_GetError()<<endl;
+    //cerr <<"Enable to init Sound card ! "<<SDL_GetError()<<endl;
     return false;
   }
   

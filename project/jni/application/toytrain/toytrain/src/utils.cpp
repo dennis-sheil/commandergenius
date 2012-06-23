@@ -21,7 +21,6 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.,
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-#include <iostream.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -77,7 +76,7 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
 
   file=fopen(Path,"r");
   if(!file) {
-    cerr <<"ERREUR: Impossible d'ouvrir '"<<Path<<"'"<<endl;
+    //cerr <<"ERREUR: Impossible d'ouvrir '"<<Path<<"'"<<endl;
     perror("fopen");
     return -1;
   }
@@ -93,7 +92,7 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
 
   Buf=new unsigned char [L+1];
   if(Buf==NULL) {
-    cerr <<"ERREUR: Memoire insuffisante!"<<endl;
+    //cerr <<"ERREUR: Memoire insuffisante!"<<endl;
     fclose(file);
     return -1;
   }
@@ -104,7 +103,7 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
   while(Compt>1024) {
     AfficheChargeur();
     if( fread(Po,1,1024,file) != 1024 ) {
-      cerr <<"ERREUR de lecture du fichier '"<<Path<<"'"<<endl;
+      //cerr <<"ERREUR de lecture du fichier '"<<Path<<"'"<<endl;
       perror("fread");
       fclose(file);
       delete [] Buf;
@@ -131,13 +130,13 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
 
   file=_lopen(Path,OF_READ);
   if(file==-1) {
-    cerr <<"Impossible d'ouvrir "<<Path<<endl;
+    //cerr <<"Impossible d'ouvrir "<<Path<<endl;
     exit(-1);
   }
   
   long L=(long)_llseek(file,0,SEEK_END);
   if(L==-1) {
-    cerr <<"Impossible de trouver la longueur du fichier"<<endl;
+    //cerr <<"Impossible de trouver la longueur du fichier"<<endl;
     perror("lseek");
     _lclose(file);
     return -1;
@@ -146,7 +145,7 @@ long ChargeFichier(const char *Path,unsigned char *&Buf)
   
   Buf=new unsigned char [L+1];
   if(Buf==NULL) {
-    cerr <<"ERREUR: Memoire insuffisante!"<<endl;
+    //cerr <<"ERREUR: Memoire insuffisante!"<<endl;
     _lclose(file);
     return -1;
   }
@@ -169,14 +168,14 @@ bool SauveFichier(const char *Path,char *Buf,long L)
   
   file=fopen(Path,"w");
   if(!file) {
-    cerr <<"ERREUR: Impossible d'ouvrir '"<<Path<<"'"<<endl;
+    //cerr <<"ERREUR: Impossible d'ouvrir '"<<Path<<"'"<<endl;
     perror("fopen");
     return false;
   }
   
   while(L>512) {
     if( fwrite(Buf,1,512,file) != 512 ) {
-      cerr <<"ERREUR d'ecriture du fichier '"<<Path<<"'"<<endl;
+      //cerr <<"ERREUR d'ecriture du fichier '"<<Path<<"'"<<endl;
       perror("fwrite");
       fclose(file);
       return false;
@@ -187,7 +186,7 @@ bool SauveFichier(const char *Path,char *Buf,long L)
 
   if(L>0) {
     if( fwrite(Buf,1,(size_t)L,file) != (size_t)L ) {
-      cerr <<"ERREUR d'ecriture du fichier '"<<Path<<"'"<<endl;
+      //cerr <<"ERREUR d'ecriture du fichier '"<<Path<<"'"<<endl;
       perror("fwrite");
       fclose(file);
       return false;
@@ -208,7 +207,7 @@ bool SauveFichier(const char *Path,char *Buf,long L)
 
   file=_lcreat(Path,0);
   if(!file) {
-    cerr <<"ERREUR: Impossible de créer le fichier '"<<Path<<"'"<<endl;
+    //cerr <<"ERREUR: Impossible de créer le fichier '"<<Path<<"'"<<endl;
     return false;
   }
   
@@ -216,7 +215,7 @@ bool SauveFichier(const char *Path,char *Buf,long L)
   _lclose(file);
 
   if(Lec!=L) {
-    cerr <<"Problème d'ecriture du fichier '"<<Path<<"' ecris="<<Lec<<" au lieux de ="<<L<<endl;
+    //cerr <<"Problème d'ecriture du fichier '"<<Path<<"' ecris="<<Lec<<" au lieux de ="<<L<<endl;
     return false;
   }
 
@@ -250,7 +249,7 @@ void GetPath(char *Path)
   sprintf(Path,"/usr/share/games/Ri-li/%s",Provi);
   if(FileExiste(Path)) return;
   
-  cerr <<"Impossible de trouver le fichier '"<<Provi<<endl;
+  //cerr <<"Impossible de trouver le fichier '"<<Provi<<endl;
   exit(-1);
 }
 #endif
@@ -266,7 +265,7 @@ void GetPath(char *Path)
   sprintf(Path,"PROGDIR:%s",Provi);
   if(FileExiste(Path)) return;
   
-  cerr <<"Impossible de trouver le fichier '"<<Path<<endl;
+  //cerr <<"Impossible de trouver le fichier '"<<Path<<endl;
   exit(-1);
 }
 #endif
@@ -282,7 +281,7 @@ void GetPath(char *Path)
   sprintf(Path,"Ri-li.app/Contents/Resources/%s",Provi);
   if(FileExiste(Path)) return;
   
-  cerr <<"Impossible de trouver le fichier '"<<Path<<endl;
+  //cerr <<"Impossible de trouver le fichier '"<<Path<<endl;
   exit(-1);
 }
 #endif

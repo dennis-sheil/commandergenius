@@ -21,7 +21,6 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.,
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-#include <iostream.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -92,7 +91,7 @@ void ChangeVideo(void)
   // Teste la resolution video
   sdlVideoInfo=(SDL_VideoInfo*)SDL_GetVideoInfo();
   if(sdlVideoInfo->vfmt->BitsPerPixel==8) {
-    cerr <<"Impossible d'utiliser 8bits pour la vidéo !"<<endl;
+    //cerr <<"Impossible d'utiliser 8bits pour la vidéo !"<<endl;
     exit(-1);
   }
   
@@ -112,7 +111,7 @@ void ChangeVideo(void)
   if(Pref.FullScreen) vOption|=SDL_FULLSCREEN;
   sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
   if(sdlVideo==NULL) {
-    cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
+    //cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
     exit(-1);
   }
   

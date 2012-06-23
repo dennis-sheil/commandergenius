@@ -23,7 +23,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream.h>
 #include <string.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_mixer.h>
@@ -115,7 +114,7 @@ int main(int narg,char *argv[])
  
   // Initilise SDL
   if( SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_AUDIO|SDL_INIT_NOPARACHUTE) < 0 ) {
-    cerr <<"Impossible d'initialiser SDL:"<<SDL_GetError()<<endl;
+    //cerr <<"Impossible d'initialiser SDL:"<<SDL_GetError()<<endl;
     exit(-1);
   }
   // Ferme le programme correctement quant quit
@@ -125,7 +124,7 @@ int main(int narg,char *argv[])
   sdlVideoInfo=(SDL_VideoInfo*)SDL_GetVideoInfo();
 
   if(sdlVideoInfo->vfmt->BitsPerPixel==8) {
-    cerr <<"Impossible d'utiliser 8bits pour la vidéo !"<<endl;
+    //cerr <<"Impossible d'utiliser 8bits pour la vidéo !"<<endl;
     exit(-1);
   }
   
@@ -145,7 +144,7 @@ int main(int narg,char *argv[])
   sdlVideo=SDL_SetVideoMode(800,600,sdlVideoInfo->vfmt->BitsPerPixel,vOption);
 
   if(sdlVideo==NULL) {
-    cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
+    //cerr <<"Impossible de passer dans le mode vidéo 800x600 !"<<endl;
     exit(-1);
   }
   // Change le nom de la fenetre
