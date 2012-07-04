@@ -1,0 +1,43 @@
+This package was debianized by Miriam Ruiz <little_miry@yahoo.es> on
+Sun, 08 Jul 2007 15:47:23 +0000.
+
+It was downloaded from http://hexahop.sourceforge.net/
+
+Upstream Author: Tom Beaumont <tombeaumont@yahoo.com>
+
+Copyright (C) 2005-2007 Tom Beaumont
+
+Makefile: Copyright Oliver Pearce 2004
+
+hints.html: Released into the public domain, downloaded from
+  http://hexahop.sourceforge.net/hints.html
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+ 
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+ 
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, version 2 of the GPL license can be found in
+/usr/share/common-licenses/GPL-2.
+The 3rd version of the GPL can be found in
+/usr/share/common-licenses/GPL-3.
+
+Note that you can either choose one of the versions or any later version of
+the GPL license. For your convenience, links to the currently released versions
+of the license were listed above.
+
+The Debian packaging is
+  Copyright 2007, Miriam Ruiz <little_miry@yahoo.es>,
+  Copyright 2007, Jens Seidel <jensseidel@users.sf.net>, and
+is licensed under the GPL, see above.

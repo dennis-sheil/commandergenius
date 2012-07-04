@@ -1,0 +1,24 @@
+Source: hex-a-hop
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org> 
+Uploaders: Miriam Ruiz <little_miry@yahoo.es>, Jens Seidel <jensseidel@users.sf.net>, Sam Hocevar (Debian packages) <sam+deb@zoy.org>
+Build-Depends: debhelper (>= 5), quilt, gettext, libsdl1.2-dev, libsdl-pango-dev, po4a
+Standards-Version: 3.7.2
+Homepage: http://hexahop.sourceforge.net/
+XS-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/hex-a-hop/
+XS-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/hex-a-hop/?op=log
+
+Package: hex-a-hop
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: puzzle game based on hexagonal tiles
+ Hex-a-hop is a great puzzle game in which a girl has to break all the green
+ tiles in an hexagonal map without getting trapped. There is no time limit and
+ no real-time element.
+ .
+ The objective is simply to destroy all the green hexagonal tiles on each of
+ the 100 levels. As you progress through the game, more types of tiles are
+ introduced which make things more difficult and interesting.
+ .
+  Homepage: http://hexahop.sourceforge.net/

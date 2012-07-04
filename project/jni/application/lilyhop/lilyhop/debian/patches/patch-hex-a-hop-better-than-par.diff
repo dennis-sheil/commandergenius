@@ -1,0 +1,33 @@
+# Copyright (C) 2007  Sam Hocevar <sam+deb@zoy.org>
+# Licensed under the GPL, see /usr/share/common-licenses/GPL
+
+Index: hex-a-hop.svn/hex_puzzzle.cpp
+===================================================================
+--- hex-a-hop.svn.orig/hex_puzzzle.cpp	2007-09-20 00:49:10.000000000 +0200
++++ hex-a-hop.svn/hex_puzzzle.cpp	2007-09-20 00:49:14.000000000 +0200
+@@ -2229,7 +2229,7 @@
+ 
+ 			int par = GetPar(x);
+ 			if (progress.general.scoringOn && l->PassesPar( par ))
+-				t = 4;
++				t = l->BeatsPar( par ) ? 40 : 4;
+ 		}
+ 		if (recurse) 
+ 			return t;
+Index: hex-a-hop.svn/savestate.h
+===================================================================
+--- hex-a-hop.svn.orig/savestate.h	2007-09-20 00:49:01.000000000 +0200
++++ hex-a-hop.svn/savestate.h	2007-09-20 00:49:14.000000000 +0200
+@@ -105,6 +105,12 @@
+ 
+ 		return score <= bestScore;
+ 	}
++	bool BeatsPar(int par)
++	{
++		if (!Completed())
++			return false;
++		return bestScore < par;
++	}
+ 	bool PassesPar(int par)
+ 	{
+ 		if (!Completed())

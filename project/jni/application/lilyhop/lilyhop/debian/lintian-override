@@ -1,0 +1,3 @@
+hex-a-hop: manpage-has-errors-from-man usr/share/man/bg.UTF-8/man6/hex-a-hop.6.gz 22: name expected (got a magic token)
+hex-a-hop: manpage-has-errors-from-man usr/share/man/ta.UTF-8/man6/hex-a-hop.6.gz 22: name expected (got a magic token)
+hex-a-hop: manpage-has-errors-from-man usr/share/man/vi.UTF-8/man6/hex-a-hop.6.gz 44: a magic token is not allowed in a name

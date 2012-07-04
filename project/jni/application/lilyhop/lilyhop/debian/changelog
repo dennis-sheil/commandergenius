@@ -1,0 +1,148 @@
+hex-a-hop (0.0.20070315-6) unstable; urgency=low
+
+  [Jens Seidel]
+  * Minor update of Polish translation. Thanks to Piotr Engelking
+    <inkerman42@gmail.com>.
+  * Fixed another big endian error for "par" value. Closes: #442183
+  * Added (partial) Japanese translation. Thanks to Kobayashi
+    Noritada <nori1@dolphin.c.u-tokyo.ac.jp>. Closes: #443118
+  * Added hints.html which gives tips how to solve some levels.
+  * Fix compilation error on the Hurd where PATH_MAX is not defined.
+  * A string was not translatable. Thanks to Piotr Engelking
+    <inkerman42@gmail.com> for the patch. Closes: #443193
+  * Added support for wheel mouse in help dialog. Thanks again
+    Piotr. Closes: #443194
+  * Fixed a build error on m68k because of a wrong alignment test.
+    Closes: #442854
+  * Allow right aligned text in the help dialog for some languages
+    such as Japanese.
+
+ -- Jens Seidel <jensseidel@users.sf.net>  Thu, 20 Sep 2007 00:30:00 +0200
+
+hex-a-hop (0.0.20070315-5) unstable; urgency=low
+
+  [Jens Seidel]
+  * Fixed a few errors in the code found with valgrind.
+  * Reduced the CPU load a little bit. Thanks to Joey Hess
+    <joeyh@debian.org> for the patch. Closes: #440377
+    There is more to do to get it properly fixed.
+  * Code is now big endian clean. Closes: #438857
+  * Use an ordinary (ASCII) dash instead of a UTF-8
+    encoded one in the Vietnamese translation which is
+    invalid in the generated man page.
+  * Moved Vietnamese and Bulgarian man page into
+    {bg,vi}.UTF-8/ which will be supported in man-db
+    version 2.5.0 in the near future. See: #440420
+  * Added Tamil translation. Thanks to Tirumurti
+    Vasudevan <agnihot3@gmail.com>. Closes: #441040
+  * Added a lintian override for UTF-8 manpages.
+  * Minor typo and whitespace fixes in Polish translation.
+  * Changed priority from extra to optional as suggested by
+    Bas Wijnen <wijnen@debian.org>.
+  * Explicitely refer to GPL-2 and GPL-3 in copyright. Added
+    myself too.
+
+ -- Jens Seidel <jensseidel@users.sf.net>  Mon, 10 Sep 2007 22:30:00 +0200
+
+hex-a-hop (0.0.20070315-4) unstable; urgency=low
+
+  [Jens Seidel]
+  * Added Vietnamese translation. Thanks to Clytie Siddall
+    <clytie@riverland.net.au>. Closes: #438453
+  * Added Russian translation. Thanks to Yuri Kozlov
+    <kozlov.y@gmail.com>. Closes: #438799
+  * Added Dutch translation. Thanks to Bas Wijnen
+    <shevek@fmf.nl>. Closes: #438726
+  * Added Bulgarian translation. Thanks to Damyan Ivanov
+    <dmn@debian.org>. Closes: #439047
+  * Added Polish translation and applied a minor i18n fix.
+    Thanks to Piotr Engelking <inkerman42@gmail.com>.
+    Closes: #439819
+  * Use new font also for help dialog title.
+  * Font handling is now independent of language. The text
+    is now always wrapped if necessary.
+  * Most dialog sizes are now properly respected.
+  * Avoid segmentation fault on 64 bit systems on start by
+    using a workaround for #439071. Closes: #438800
+  * Old font code removed. Compare: #438857
+  * Use a workaround for bug #439855 of SDL Pango.
+    Closes: #439393
+  * Increased a few short arrays containing translated
+    strings. Especially 40 bytes for optionSlotName are too
+    short for Russian and Bulgarian (in UTF-8 encoding).
+    This should be responsible for the bogus menu entries
+    in the screenshot to #438800.
+  * Create manpage translation from PO file using po4a.
+    Thanks to Helge Kreutzmann <debian@helgefjell.de>.
+    Closes: #438676.
+  * Build stops now on first error processing translations.
+    Thanks to Helge for the suggestion.
+  * Added some useful translator comments. Thanks again Helge.
+  * Fixed two lintian warnings (proper usage of hyphens in
+    manpage, removed "Encoding" line in desktop file).
+  * Fixed a superfluous space in a level name. Thanks to
+    Piotr Engelking <inkerman42@gmail.com>. Closes: #439289.
+  * Use a bold font as suggested by Piotr Engelking
+    <inkerman42@gmail.com> to increase readability.
+    Closes: #439290.
+  * Fixed an error in one of the applied patches and allow
+    displaying of end credits. Thanks to Piotr Engelking
+    <inkerman42@gmail.com>. Closes: #439291.
+  * Added Homepage field to source control file.
+
+  [Miriam Ruiz]
+  * Updated Spanish Translation. Thanks quique.
+
+ -- Jens Seidel <jensseidel@users.sf.net>  Wed, 29 Aug 2007 00:01:00 +0200
+
+hex-a-hop (0.0.20070315-3) unstable; urgency=low
+
+  [Miriam Ruiz]
+  * Do not unnecessarily initialize cdrom subsystem. Thanks to
+    Piotr Engelking <inkerman42@gmail.com>. Closes: #436008
+  * Added tools to convert files from/to bmp and dat formats.
+
+  [Jens Seidel]
+  * Refined debian/i18n/Makefile to workaround an xgettext
+    limitation, to ship a POT file and to update PO files.
+    Closes: #437338
+  * Added German translation. Thanks to Helge Kreutzmann
+    <debian@helgefjell.de>. Closes: #437438
+  * Fixed some typos. Thanks to Helge Kreutzmann
+    <debian@helgefjell.de>. Closes: #437440, #437439
+  * Fixed all compiler warnings and use e.g. -Wall -Wextra
+    default. Closes: #437313
+  * Use the SDLPango library for font handling. This is a first
+    draft and behaves differently for English and translations.
+    Closes: #436469.
+  * debian/control:
+    + Added myself to the uploader list.
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Wed,  8 Aug 2007 16:34:41 +0200
+
+hex-a-hop (0.0.20070315-2) unstable; urgency=low
+
+  [Miriam Ruiz]
+  * Fixed man page. Thanks to Helge Kreutzmann <debian@helgefjell.de>
+    Closes: #436038
+  * Added support for i18n via gettext. Closes: #436040
+  * Take word size and endianess into account when reading the size of
+    the .dat file. Closes: #434741
+
+  [ Sam Hocevar ]
+  * patch-hex-a-hop-better-than-par.diff:
+    + Display a different level tile when the user beat the par.
+  * debian/control:
+    + Added myself to the uploader list.
+
+  [ Cyril Brulebois ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Sun, 05 Aug 2007 10:10:28 +0000
+
+hex-a-hop (0.0.20070315-1) unstable; urgency=low
+
+  * Initial release (Closes: #431912)
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Sun, 08 Jul 2007 15:47:23 +0000
+
