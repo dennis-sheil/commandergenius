@@ -179,6 +179,8 @@ String GetBasePath()
 {
 	String base_path;
 
+#define DATADIR "."
+
 #ifdef RELATIVE_PATHS
 	char* exedir = lisys_relative_exedir();
 	if (exedir != NULL)

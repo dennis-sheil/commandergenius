@@ -211,6 +211,7 @@ bool TextInit(const char* base)
 {
 	std::string dir(base);
 
+#define FONT_PATH "./DejaVuSans-Bold.ttf"
 #ifdef FONT_PATH
 	std::string name;
 	std::string fontname(FONT_PATH);
