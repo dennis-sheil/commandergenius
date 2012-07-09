@@ -139,7 +139,7 @@ void InitScreen()
 	realScreen = SDL_SetVideoMode(
 		SCREEN_W, SCREEN_H, // Width, Height
 		0, // Current BPP
-		SDL_SWSURFACE | SDL_DOUBLEBUF | (fullscreen ? SDL_FULLSCREEN : 0) );
+		SDL_SWSURFACE | (fullscreen ? SDL_FULLSCREEN : 0) );
 #endif
 
 	if (screen)
